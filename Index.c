@@ -14,15 +14,18 @@ int main() {
     printf("Enter number of blocks: ");
     scanf("%d", &n);
 
-    printf("Enter block numbers: ");
+    printf("Enter  block numbers: ");
     for(i = 0; i < n; i++)
         scanf("%d", &b[i]);
 
-    for(i = 0; i < n; i++)
-        if(d[b[i]]) {
-            printf("Block already allocated\n");
+    for(i = 0; i < n; i++) {
+    for(int j = i + 1; j < n; j++) {
+        if(b[i] == b[j]) {
+            printf("Block already allocated (duplicate)\n");
             return 0;
         }
+    }
+}
 
     d[idx] = 1;
     for(i = 0; i < n; i++)
